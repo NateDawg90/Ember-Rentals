@@ -1,6 +1,7 @@
 
 export default function() {
-this.passthrough('https://api.mapbox.com/**');
+  this.passthrough('https://api.mapbox.com/**');
+
   this.namespace = '/api';
 
   let rentals = [{
@@ -51,4 +52,10 @@ this.passthrough('https://api.mapbox.com/**');
       return { data: rentals };
     }
   });
+
+  // Find and return the provided rental from our rental list above
+  this.get('/rentals/:id', function (db, request) {
+    return { data: rentals.find((rental) => request.params.id === rental.id) };
+  });
+
 }

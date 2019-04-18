@@ -1,6 +1,7 @@
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
 
+const DUMMY_ELEMENT = {};
 
 module('Unit | Service | map-element', function(hooks) {
   setupTest(hooks);
